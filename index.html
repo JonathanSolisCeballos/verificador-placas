@@ -16,17 +16,30 @@
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <h1>Consulta si tu placa existe</h1>
+  <body class="text-center">
+    <main class="form-signin w-100 m-auto">
+      <form>
+        <img class="mb-4" src="./placa.png" alt="" width="150" />
+        <h1 class="h3 mb-3 fw-normal">Consulta si tu placa existe</h1>
 
-    <form>
-      <input type="text" name="placa" id="numero-placa" />
-      <input type="submit" value="Consultar" />
-    </form>
+        <div class="form-floating">
+          <input type="text" class="form-control" id="numero-placa" placeholder="Ingresa tu placa aquí" />
+          <label for="numero-placa">Número de placa:</label>
+        </div>
 
-    <span id="cargando" style="display: none">Cargando...</span>
-    <div id="resultado"></div>
+        <div class="d-flex justify-content-center mt-2">
+          <div class="spinner-border" role="status" id="cargando" style="display: none">
+            <span class="sr-only" style="display: none">Cargando...</span>
+          </div>
+          <div id="resultado"></div>
+        </div>
+
+        <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">Consultar</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2023</p>
+      </form>
+    </main>
 
     <script>
       const apiURL = "http://127.0.0.1:5500";
